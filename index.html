@@ -16,14 +16,14 @@
                         amberCandidate: '#f59e0b',
                         roseHero: '#f43f5e',
                         darkBg: '#0b0f19',
-                        cardBg: 'rgba(23, 31, 48, 0.7)',
+                        cardBg: 'rgba(23, 31, 48, 0.75)',
                         glassBorder: 'rgba(255, 255, 255, 0.08)'
                     }
                 }
             }
         }
     </script>
-    <!-- Embedded Native Styling & Glassmorphic Fallbacks for Edge / Offline -->
+    <!-- Embedded Fallback CSS for Local / Edge Offline Execution -->
     <style>
         body {
             background-color: #0b0f19;
@@ -43,22 +43,15 @@
         .border-candidate { border-color: #f59e0b !important; border-style: dashed !important; }
         .border-hero { border-color: #f43f5e !important; }
         
-        /* Tree Visualizer Connectors */
         .tree-line-v {
             width: 2px;
             background: linear-gradient(180deg, rgba(0, 242, 254, 0.6) 0%, rgba(245, 158, 11, 0.4) 100%);
             margin: 0 auto;
         }
-        
-        /* Slide Deck Navigation styling */
-        .slide-card {
-            display: none;
-        }
-        .slide-card.active {
-            display: block;
-        }
 
-        /* Printable PDF formatting */
+        .slide-card { display: none; }
+        .slide-card.active { display: block; }
+
         @media print {
             .no-print { display: none !important; }
             body { background: white !important; color: black !important; }
@@ -69,7 +62,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- TOP NAVIGATION APP SHELL BAR -->
+    <!-- NAVIGATION APP SHELL BAR -->
     <header class="no-print sticky top-0 z-40 w-full glass-panel border-b border-glassBorder px-4 py-3 flex flex-wrap items-center justify-between gap-4">
         <div class="flex items-center space-x-3">
             <div class="p-2 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-cyanAccent font-bold text-xl">
@@ -107,7 +100,7 @@
         </div>
     </header>
 
-    <!-- MAIN INTERACTIVE CONTENT AREA -->
+    <!-- MAIN CONTENT AREA -->
     <main class="flex-1 p-4 md:p-6 max-w-7xl w-full mx-auto space-y-6">
 
         <!-- LEGEND & FILTER BAR -->
@@ -142,8 +135,7 @@
                     <div class="flex-1 h-px bg-amber-500/20"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- John Beaton Sr. -->
-                    <div onclick="openDrawer('gen9-john')" class="glass-panel p-4 rounded-xl border-candidate hover:bg-slate-800/80 cursor-pointer transition-all relative">
+                    <div onclick="openDrawer('gen9-john')" class="glass-panel p-4 rounded-xl border-candidate hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
                                 <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">Candidate Anchor</span>
@@ -155,8 +147,7 @@
                         <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">Occupation:</strong> Boatman on the River Clyde</p>
                         <p class="text-xs text-slate-400"><strong class="text-slate-300">Marriage:</strong> m. Agnes McLachlan (15 June 1770, Glasgow Parish 644/1)</p>
                     </div>
-                    <!-- Agnes McLachlan -->
-                    <div onclick="openDrawer('gen9-agnes')" class="glass-panel p-4 rounded-xl border-candidate hover:bg-slate-800/80 cursor-pointer transition-all relative">
+                    <div onclick="openDrawer('gen9-agnes')" class="glass-panel p-4 rounded-xl border-candidate hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
                                 <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">Candidate Anchor</span>
@@ -165,7 +156,7 @@
                             </div>
                             <span class="text-xl">📜</span>
                         </div>
-                        <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">Details:</strong> Survived spouse; widowed prior to son John's baptism in March 1775.</p>
+                        <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">Details:</strong> Survived spouse; widowed prior to son John baptism in March 1775.</p>
                     </div>
                 </div>
             </div>
@@ -178,7 +169,6 @@
                     <span>GENERATION 8 • 5x GREAT-GRANDPARENTS (~80% CANDIDATES & SIBLINGS)</span>
                     <div class="flex-1 h-px bg-amber-500/20"></div>
                 </div>
-                <!-- Main Candidate Anchor -->
                 <div onclick="openDrawer('gen8-john')" class="glass-panel p-4 rounded-xl border-candidate hover:bg-slate-800/80 cursor-pointer transition-all">
                     <div class="flex justify-between items-start">
                         <div>
@@ -191,7 +181,6 @@
                     <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">Occupation:</strong> General Labourer in Glasgow</p>
                     <p class="text-xs text-slate-400"><strong class="text-slate-300">Spouse:</strong> Christian McGilvra (Mother to Neil Beaton, b. 1793)</p>
                 </div>
-                <!-- Sibling Network Gen 8 -->
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                     <div class="glass-panel p-2.5 rounded-lg text-xs border border-glassBorder">
                         <span class="text-slate-400">Sibling:</span> <strong class="text-white">Daniel Beaton</strong> (b. 1 Apr 1771, Glasgow)
@@ -211,7 +200,6 @@
                     <div class="flex-1 h-px bg-cyan-500/20"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Neil Beaton -->
                     <div onclick="openDrawer('gen7-neil')" class="glass-panel p-4 rounded-xl border-verified hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
@@ -224,7 +212,6 @@
                         <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">Occupation:</strong> Journeyman Joiner</p>
                         <p class="text-xs text-slate-400"><strong class="text-slate-300">Marriage:</strong> m. Christian / Christina Thomson (27 May 1821, Glasgow)</p>
                     </div>
-                    <!-- Christina Thomson -->
                     <div onclick="openDrawer('gen7-christina')" class="glass-panel p-4 rounded-xl border-verified hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
@@ -235,11 +222,10 @@
                             <span class="text-xl">🏠</span>
                         </div>
                         <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">1851 Residence:</strong> 118 Holm Street, Barony, Glasgow (Widowed)</p>
-                        <p class="text-xs text-slate-400"><strong class="text-slate-300">Maiden Name Proof:</strong> Official M.S. Thomson on son Roderick's 1880 Death Cert</p>
+                        <p class="text-xs text-slate-400"><strong class="text-slate-300">Maiden Name Proof:</strong> Official M.S. Thomson on son Roderick 1880 Death Cert</p>
                     </div>
                 </div>
 
-                <!-- Collateral Sibling Network Gen 7 -->
                 <div class="bg-slate-900/60 p-3 rounded-xl border border-glassBorder space-y-2">
                     <span class="text-xs font-semibold text-slate-300">1851 Census Household (118 Holm Street, Glasgow) Collateral Siblings:</span>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
@@ -260,7 +246,6 @@
                     <div class="flex-1 h-px bg-cyan-500/20"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Roderick Beaton -->
                     <div onclick="openDrawer('gen6-roderick')" class="glass-panel p-4 rounded-xl border-verified hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
@@ -273,7 +258,6 @@
                         <p class="text-xs text-slate-400 mt-2"><strong class="text-slate-300">Trade:</strong> Journeyman Joiner ➔ Master Tobacconist</p>
                         <p class="text-xs text-slate-400"><strong class="text-slate-300">Marriage:</strong> m. Sibella McIntosh (30 April 1862, Rothesay, Bute)</p>
                     </div>
-                    <!-- Sibella McIntosh -->
                     <div onclick="openDrawer('gen6-sibella')" class="glass-panel p-4 rounded-xl border-verified hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
@@ -287,7 +271,6 @@
                     </div>
                 </div>
 
-                <!-- Children of Roderick & Sibella -->
                 <div class="bg-slate-900/60 p-3 rounded-xl border border-glassBorder space-y-2">
                     <span class="text-xs font-semibold text-slate-300">Children / Collateral Branch:</span>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
@@ -310,7 +293,6 @@
                     <div class="flex-1 h-px bg-cyan-500/20"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- William Smith Beaton (Gen 5) -->
                     <div onclick="openDrawer('gen5-william')" class="glass-panel p-4 rounded-xl border-verified hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
@@ -324,7 +306,6 @@
                         <p class="text-xs text-slate-400"><strong class="text-slate-300">Spouse:</strong> Sophia MacDougall (b. c. 1873, Paisley)</p>
                     </div>
 
-                    <!-- James Beaton (Gen 4) -->
                     <div onclick="openDrawer('gen4-james')" class="glass-panel p-4 rounded-xl border-verified hover:bg-slate-800/80 cursor-pointer transition-all">
                         <div class="flex justify-between items-start">
                             <div>
@@ -339,7 +320,6 @@
                     </div>
                 </div>
 
-                <!-- 1911 Census Household & WWI Hero Duncan -->
                 <div class="bg-slate-900/60 p-3 rounded-xl border border-glassBorder space-y-2">
                     <span class="text-xs font-semibold text-slate-300">1911 Census Household (144 Barrowfield St) Brothers:</span>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
@@ -363,7 +343,7 @@
 
             <div class="tree-line-v h-6"></div>
 
-            <!-- GENERATION 3 Baseline Baseline Anchor -->
+            <!-- GENERATION 3 Baseline Anchor -->
             <div class="space-y-3">
                 <div class="flex items-center space-x-2 text-cyanAccent text-xs font-bold tracking-wider uppercase">
                     <span>GENERATION 3 • GRANDPARENTS (BASELINE ROOT ANCHOR)</span>
@@ -395,63 +375,54 @@
         <div id="view-timeline" class="hidden space-y-6">
             <h2 class="text-base font-bold text-white border-b border-glassBorder pb-2">250-Year Chronological Milestones (1770–1928)</h2>
             <div class="relative border-l-2 border-cyan-500/30 pl-6 space-y-6">
-                <!-- 1770 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-amber-500 border border-slate-900"></div>
                     <span class="text-xs font-bold text-amberCandidate">15 JUNE 1770</span>
                     <h3 class="text-sm font-bold text-white">Marriage of John Beaton Sr. & Agnes McLachlan (Gen 9 Candidate)</h3>
                     <p class="text-xs text-slate-400">Married in Glasgow Parish 644/1 (Ref: 260/89). John Sr. worked as a Boatman on the River Clyde.</p>
                 </div>
-                <!-- 1775 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-amber-500 border border-slate-900"></div>
                     <span class="text-xs font-bold text-amberCandidate">10 MARCH 1775</span>
                     <h3 class="text-sm font-bold text-white">Birth of John Beaton (Gen 8 Candidate)</h3>
                     <p class="text-xs text-slate-400">Baptized 12 March 1775 in Glasgow Parish 644/1 (Ref: 160/154). Father recorded as "John Beaton, Boatman (deceast)".</p>
                 </div>
-                <!-- 1793 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 border border-slate-900"></div>
                     <span class="text-xs font-bold text-cyanAccent">16 SEPTEMBER 1793</span>
                     <h3 class="text-sm font-bold text-white">Baptism of Neil Beaton (Gen 7 Verified Anchor)</h3>
                     <p class="text-xs text-slate-400">Baptized in Glasgow Parish 644/1 (Ref: 190/126) to John Beaton (Labourer) & Christian McGilvra. Witnessed by Donald McGilvra.</p>
                 </div>
-                <!-- 1821 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 border border-slate-900"></div>
                     <span class="text-xs font-bold text-cyanAccent">27 MAY 1821</span>
                     <h3 class="text-sm font-bold text-white">Marriage of Neil Beaton & Christian Thomson</h3>
                     <p class="text-xs text-slate-400">Married in Glasgow Parish 644/1 (Ref: 400/76). Neil worked as a Journeyman Joiner.</p>
                 </div>
-                <!-- 1862 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 border border-slate-900"></div>
                     <span class="text-xs font-bold text-cyanAccent">30 APRIL 1862</span>
                     <h3 class="text-sm font-bold text-white">Marriage of Roderick Beaton & Sibella McIntosh</h3>
                     <p class="text-xs text-slate-400">Married in Rothesay, Isle of Bute (Ref: 558/16). Roderick later established his Master Tobacconist shop at Argyle Street, Glasgow.</p>
                 </div>
-                <!-- 1869 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 border border-slate-900"></div>
                     <span class="text-xs font-bold text-cyanAccent">31 MAY 1869</span>
                     <h3 class="text-sm font-bold text-white">Birth of William Smith Beaton (Gen 5)</h3>
                     <p class="text-xs text-slate-400">Born at 403 Argyle Street, Glasgow (Ref: Clyde District 530). Coppersmith at 144 Barrowfield Street.</p>
                 </div>
-                <!-- 1918 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-rose-500 border border-slate-900"></div>
                     <span class="text-xs font-bold text-roseHero">30 SEPTEMBER 1918</span>
                     <h3 class="text-sm font-bold text-white">Death in Action of Pte. Duncan Beaton (HLI)</h3>
                     <p class="text-xs text-slate-400">Killed in action at age 22 in Flanders, Belgium while serving with 12th Battalion, Highland Light Infantry.</p>
                 </div>
-                <!-- 1927 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 border border-slate-900"></div>
                     <span class="text-xs font-bold text-cyanAccent">30 DECEMBER 1927</span>
                     <h3 class="text-sm font-bold text-white">Marriage of James Beaton & Marion Wood</h3>
                     <p class="text-xs text-slate-400">Married in Calton, Glasgow (Ref: Entry 13). James worked as a Bicycle Works Labourer at 54 John Knox Street.</p>
                 </div>
-                <!-- 1928 -->
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 border border-slate-900"></div>
                     <span class="text-xs font-bold text-cyanAccent">1928</span>
@@ -638,22 +609,162 @@
 
     </main>
 
-    <!-- SLIDE-OUT INSPECTION DRAWER -->
+    <!-- INSPECTION DRAWER -->
     <div id="drawer" class="no-print fixed inset-y-0 right-0 w-full sm:w-96 glass-panel border-l border-glassBorder z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 overflow-y-auto space-y-4">
         <div class="flex justify-between items-center border-b border-glassBorder pb-3">
             <h3 id="drawer-title" class="text-lg font-bold text-white">Person Details</h3>
             <button onclick="closeDrawer()" class="text-slate-400 hover:text-white text-lg">✕</button>
         </div>
         <div id="drawer-content" class="text-xs text-slate-300 space-y-3">
-            <!-- Content dynamically injected by JavaScript -->
+            <!-- Dynamically injected -->
         </div>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Database of detailed proof citations for slide-out drawer
         const personData = {
             'gen9-john': {
                 name: 'John Beaton Sr.',
                 badge: '~80% Working Candidate',
-                badgeClass: 'bg-amber-500/20 text-amber-30
+                badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+                trade: 'Boatman on the River Clyde',
+                vital: 'd. prior to March 1775',
+                proof: 'Record FR1665 (Glasgow 644/1 190/126) for son John baptism explicitly records father as John Beaton, Boatman (deceast). Married Agnes McLachlan on 15 June 1770 (Ref: 260/89).'
+            },
+            'gen9-agnes': {
+                name: 'Agnes McLachlan',
+                badge: '~80% Working Candidate',
+                badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+                trade: 'Widowed Mother',
+                vital: 'm. 15 June 1770 in Glasgow Parish 644/1',
+                proof: 'Proclaimed and married in Glasgow Parish 644/1 (Ref: 260/89 FR2726). Raised infant son John in Glasgow following spouse death.'
+            },
+            'gen8-john': {
+                name: 'John Beaton',
+                badge: '~80% Working Candidate',
+                badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+                trade: 'General Labourer',
+                vital: 'b. 10 March 1775 (bpt. 12 March 1775, Glasgow)',
+                proof: 'Registered in Glasgow Parish 644/1 (Ref: 160/154 FR971). Recorded as Labourer on son Neil baptism entry with Christian McGilvra.'
+            },
+            'gen7-neil': {
+                name: 'Neil Beaton',
+                badge: '100% Verified Anchor Line',
+                badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+                trade: 'Journeyman Joiner',
+                vital: 'bpt. 16 Sept 1793 (Glasgow 644/1) • d. < April 1862',
+                proof: 'Baptism Ref: 644/1 190/126 FR1665. Witnessed by Donald McGilvra. Married Christian Thomson 27 May 1821 (Ref: 644/1 400/76 FR6615).'
+            },
+            'gen7-christina': {
+                name: 'Christina Thomson',
+                badge: '100% Verified Anchor Line',
+                badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+                trade: 'Householder (118 Holm Street)',
+                vital: 'b. c. 1797, Alloa, Clackmannanshire',
+                proof: '1851 Census at 118 Holm St, Barony, Glasgow (Ref: 622/123/14). Official maiden surname Thomson legally confirmed on son Roderick 1880 death certificate (Ref: 644/7/320).'
+            },
+            'gen6-roderick': {
+                name: 'Roderick Beaton',
+                badge: '100% Verified Anchor Line',
+                badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+                trade: 'Journeyman Joiner ➔ Master Tobacconist',
+                vital: 'b. c. 1824, Glasgow • d. 27 June 1880 (414 Argyle St)',
+                proof: 'Married Sibella McIntosh on 30 April 1862 in Rothesay (Ref: 558/16). Official Death Certificate Ref: Statutory Registers Deaths 644/7/320, Blythswood District.'
+            },
+            'gen6-sibella': {
+                name: 'Sibella McIntosh',
+                badge: '100% Verified Anchor Line',
+                badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+                trade: 'Domestic Servant (1862)',
+                vital: 'b. c. 1841, Rothesay, Isle of Bute',
+                proof: 'Marriage Register Ref: 558/16. Daughter of Alexander McIntosh (Mason) and Catherine Ferguson.'
+            },
+            'gen5-william': {
+                name: 'William Smith Beaton',
+                badge: '100% Verified Anchor Line',
+                badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+                trade: 'Coppersmith',
+                vital: 'b. 31 May 1869 (403 Argyle St) • d. < Dec 1927',
+                proof: 'Birth Cert Ref: Clyde District 644/5 Entry 530. 1911 Census head at 144 Barrowfield Street, Camlachie.'
+            },
+            'gen4-james': {
+                name: 'James Beaton',
+                badge: '100% Verified Anchor Line',
+                badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+                trade: 'Bicycle Works Labourer',
+                vital: 'b. c. 1904, Camlachie, Glasgow',
+                proof: 'Resided at 54 John Knox Street, Calton. Married Marion Wood on 30 Dec 1927 (Ref: Calton District, Entry No. 13).'
+            }
+        };
+
+        function switchTab(tab) {
+            const tabs = ['canvas', 'timeline', 'deck', 'matrix'];
+            tabs.forEach(t => {
+                const el = document.getElementById('view-' + t);
+                const btn = document.getElementById('tab-' + t);
+                if (el) el.classList.add('hidden');
+                if (btn) btn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition-all';
+            });
+            const activeEl = document.getElementById('view-' + tab);
+            const activeBtn = document.getElementById('tab-' + tab);
+            if (activeEl) activeEl.classList.remove('hidden');
+            if (activeBtn) activeBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-white bg-cyan-600/40 border border-cyan-400/40 transition-all';
+        }
+
+        function openDrawer(id) {
+            const data = personData[id];
+            if (!data) return;
+            
+            document.getElementById('drawer-title').innerText = data.name;
+            document.getElementById('drawer-content').innerHTML = 
+                '<div class="inline-block px-2 py-0.5 rounded text-xs font-semibold border ' + data.badgeClass + '">' + data.badge + '</div>' +
+                '<div><strong class="text-white">Trade / Occupation:</strong> ' + data.trade + '</div>' +
+                '<div><strong class="text-white">Vital Dates / Places:</strong> ' + data.vital + '</div>' +
+                '<div class="p-3 bg-slate-900 rounded-lg border border-glassBorder mt-2">' +
+                    '<strong class="text-cyanAccent">Primary Source Proof & References:</strong>' +
+                    '<p class="mt-1 text-slate-300">' + data.proof + '</p>' +
+                '</div>';
+            
+            document.getElementById('drawer').classList.remove('translate-x-full');
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawer').classList.add('translate-x-full');
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide-card');
+        
+        function changeSlide(direction) {
+            if (!slides.length) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('slide-indicator').innerText = 'Slide ' + (currentSlide + 1) + ' of ' + slides.length;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const deck = document.getElementById('view-deck');
+            if (deck && !deck.classList.contains('hidden')) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    changeSlide(1);
+                } else if (e.key === 'ArrowLeft') {
+                    changeSlide(-1);
+                }
+            }
+            if (e.key === 'Escape') {
+                closeDrawer();
+            }
+        });
+
+        function filterTree() {
+            const query = document.getElementById('global-search').value.toLowerCase();
+            const cards = document.querySelectorAll('#view-canvas .glass-panel');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
